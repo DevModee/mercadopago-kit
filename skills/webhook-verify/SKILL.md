@@ -34,8 +34,15 @@ Check a Mercado Pago `x-signature` header and pinpoint why a backend rejects val
 ```js
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
+const MAX_AGE_SECONDS = 300;
+
 function isValidSignature({ xSignature, xRequestId, dataId, secret }) {
   const parts = Object.fromEntries(xSignature.split(',').map((p) => p.trim().split('=')));
+  // Reject stale or missing timestamps so a captured notification cannot be replayed later.
+  // Depending on the integration, ts may be in seconds or milliseconds.
+  const ts = Number(parts.ts);
+  const tsSeconds = ts > 1e12 ? ts / 1000 : ts;
+  if (!Number.isFinite(tsSeconds) || Math.abs(Date.now() / 1000 - tsSeconds) > MAX_AGE_SECONDS) return false;
   let manifest = '';
   if (dataId) manifest += `id:${String(dataId).toLowerCase()};`;
   if (xRequestId) manifest += `request-id:${xRequestId};`;

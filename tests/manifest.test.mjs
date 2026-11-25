@@ -113,7 +113,10 @@ test('mcp_config.json defines the mercadopago server without hardcoded secrets',
   assert.equal(typeof server.command, 'string');
   assert.ok(server.command.length > 0);
   assert.ok(Array.isArray(server.args));
-  assert.ok(server.args.includes('mercadopago-mcp'), 'args must launch mercadopago-mcp');
+  assert.ok(
+    server.args.some((arg) => /^mercadopago-mcp@\d+\.\d+\.\d+$/.test(arg)),
+    'args must launch mercadopago-mcp pinned to an exact version',
+  );
 
   for (const [key, value] of Object.entries(server.env ?? {})) {
     assert.equal(typeof value, 'string');
