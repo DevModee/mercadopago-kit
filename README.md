@@ -2,7 +2,7 @@
 
 Antigravity plugin for working with Mercado Pago from the agent. It bundles:
 
-- The [`mercadopago-mcp`](https://github.com/DevModee/mercadopago-mcp) server, launched with `npx -y mercadopago-mcp`. Read-only by default.
+- The [`mercadopago-mcp`](https://github.com/DevModee/mercadopago-mcp) server, launched with `npx -y mercadopago-mcp@0.2.0` (pinned version). Read-only by default.
 - Three skills: payment debugging, webhook signature verification, and Checkout Pro integration.
 - Agent rules in `rules/AGENTS.md` that keep tokens out of the chat and block guessed endpoints.
 
