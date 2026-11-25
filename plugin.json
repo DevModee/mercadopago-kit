@@ -1,0 +1,29 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "mercadopago-kit",
+  "displayName": "Mercado Pago Kit",
+  "version": "1.0.0",
+  "description": "Mercado Pago plugin for Antigravity: inspect payments, merchant orders, preferences, and HMAC webhook signatures via mercadopago-mcp, with debugging skills and safety rules.",
+  "logo": "assets/logo.svg",
+  "author": {
+    "name": "Matias Sanchez Gonzalez",
+    "url": "https://github.com/DevModee"
+  },
+  "homepage": "https://github.com/DevModee/mercadopago-kit",
+  "repository": "https://github.com/DevModee/mercadopago-kit",
+  "license": "MIT",
+  "keywords": [
+    "mercadopago",
+    "mercado-pago",
+    "payments",
+    "webhooks",
+    "checkout-pro",
+    "latam",
+    "mcp"
+  ],
+  "suggestedPrompts": [
+    "Why was payment 1234567890 rejected and what does its status_detail mean?",
+    "Verify a Mercado Pago webhook x-signature header against x-request-id and data.id",
+    "Reconcile a merchant order with its attached payments and check paid vs total"
+  ]
+}

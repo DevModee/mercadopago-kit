@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mercadopago": {
+      "command": "npx",
+      "args": ["-y", "mercadopago-mcp"]
+    }
+  }
+}
