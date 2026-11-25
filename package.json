@@ -1,0 +1,16 @@
+{
+  "name": "mercadopago-kit",
+  "version": "1.0.0",
+  "description": "Mercado Pago plugin for Google Antigravity powered by mercadopago-mcp, with payment debugging skills and API safety rules.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "author": "Matias Sanchez Gonzalez <https://github.com/DevModee>",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "node scripts/lint.mjs"
+  }
+}
